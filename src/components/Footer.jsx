@@ -1,7 +1,14 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { SectionWrapper } from "../hoc";
-import { email, github, instagram, location, twitter } from "../assets";
+import {
+  email,
+  github,
+  instagram,
+  location,
+  twitter,
+  linkedin,
+} from "../assets";
 
 const Footer = () => {
   const formRef = useRef();
@@ -74,6 +81,12 @@ const Footer = () => {
               <img src={twitter} alt="" className="" />
             </a>
 
+            <a
+              href="https://www.linkedin.com/in/imam-affandi-106450245/"
+              target="_blank"
+            >
+              <img src={linkedin} alt="" className="" />
+            </a>
             <a href="https://www.instagram.com/imamaffandi01/" target="_blank">
               <img src={instagram} alt="" className="" />
             </a>

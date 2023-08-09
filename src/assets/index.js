@@ -24,6 +24,7 @@ import gorify from "./gorify.png";
 import email from "./email.svg";
 import whatsapp from "./whatsapp.svg";
 import location from "./location.svg";
+import linkedin from "./linkedin.svg";
 
 export {
   bg,
@@ -44,6 +45,7 @@ export {
   email,
   location,
   whatsapp,
+  linkedin,
   portfolio,
   blackhole,
   gorify,
