@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,7 +22,7 @@ body {
 } */
 
 .poppins {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 .neue {
   font-family: "Bebas Neue", sans-serif;
@@ -41,8 +42,7 @@ body {
   left: -50%;
   right: -50%;
   bottom: -50%;
-  background: transparent
-    url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+  background: transparent url("/noise-transparent.png") repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation 0.2s infinite;
   opacity: 0.9;
@@ -83,5 +83,27 @@ body {
   }
   100% {
     transform: translate(5%, 0);
+  }
+}
+.lds-dual-ring {
+  display: flex;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #ff0000;
+  border-color: #e41b1b transparent #b30000 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

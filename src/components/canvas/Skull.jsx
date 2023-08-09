@@ -1,7 +1,7 @@
-import { useRef, useState } from "react";
+import { useRef, useState, Suspense } from "react";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-
+import { Loading } from "../../components";
 const Skull = () => {
   const skull = useGLTF("/skull/skull.gltf");
   const [animationStarted, setAnimationStarted] = useState(false);
@@ -47,21 +47,23 @@ const Skull = () => {
 function SkullScene() {
   return (
     <div className="fixed w-full h-screen hover:cursor-pointer">
-      <Canvas
-        frameloop="always"
-        camera={{ position: [20, 10, 3], fov: 25 }}
-        gl={{ preserveDrawingBuffer: true }}
-        size={[window.innerWidth, window.innerHeight]}
-      >
-        <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <ambientLight />
-        <Skull />
-      </Canvas>
+      <Suspense fallback={<Loading />}>
+        <Canvas
+          frameloop="always"
+          camera={{ position: [20, 10, 3], fov: 25 }}
+          gl={{ preserveDrawingBuffer: true }}
+          size={[window.innerWidth, window.innerHeight]}
+        >
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <ambientLight intensity={50} />
+          <Skull />
+        </Canvas>
+      </Suspense>
     </div>
   );
 }

@@ -15,10 +15,10 @@ const Projects = () => {
     <>
       <section className="px-10 ">
         <motion.div variants={right} initial="hidden" whileInView="visible">
-          <p className="sm:text-[18px] text-[14px] text-light uppercase tracking-wider">
+          <p className="sm:text-[18px] text-[14px] text-light uppercase neue tracking-wider">
             What just I make?
           </p>
-          <h2 className="text-mid font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+          <h2 className="text-mid font-black text-5xl neue tracking-wider">
             Projects
           </h2>
         </motion.div>
@@ -55,7 +55,7 @@ const Projects = () => {
               >
                 {hoveredIndex === project.index && (
                   <div
-                    className="flex gap-3 justify-around items-center z-20 glass overflow-hidden"
+                    className="flex gap-3 justify-around items-center z-20 glass overflow-hidden text-white poppins opacity-90"
                     ref={imageRef}
                     style={{
                       position: "fixed",

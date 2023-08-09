@@ -11,10 +11,10 @@ const Content = () => {
         transition={{ delay: 0.1 }}
       >
         <div>
-          <p className="sm:text-[18px] text-[14px] text-light  uppercase tracking-wider">
+          <p className="sm:text-[18px] text-[14px] text-light  uppercase neue tracking-wider">
             Introduction
           </p>
-          <h2 className="text-mid font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+          <h2 className="text-mid neue tracking-wider font-black text-5xl">
             Overview.
           </h2>
         </div>
@@ -37,10 +37,10 @@ const Content = () => {
       {/* Skill */}
       <section className="py-32">
         <motion.div variants={right} initial="hidden" whileInView="visible">
-          <p className="sm:text-[18px] text-[14px] text-light uppercase tracking-wider">
+          <p className="sm:text-[18px] text-[14px] text-light uppercase neue tracking-wider">
             What can I do?
           </p>
-          <h2 className="text-mid font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+          <h2 className="text-mid font-black neue tracking-wider text-5xl">
             Skill
           </h2>
         </motion.div>
