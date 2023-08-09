@@ -1,14 +1,7 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { SectionWrapper } from "../hoc";
-import {
-  email,
-  github,
-  instagram,
-  location,
-  twitter,
-  whatsapp,
-} from "../assets";
+import { email, github, instagram, location, twitter } from "../assets";
 
 const Footer = () => {
   const formRef = useRef();
@@ -65,11 +58,6 @@ const Footer = () => {
           </h1>
         </div>
         <div>
-          {" "}
-          <div className=" flex items-center gap-3 pt-3 cursor-pointer">
-            <img src={whatsapp} alt="" className="h-5 w-5" />
-            <p className="poppins">+6281230677319</p>
-          </div>
           <div className=" flex items-center gap-3 pt-3 cursor-pointer">
             <img src={location} alt="" className="h-5 w-5" />
             <p className="poppins">Malang, Indonesia</p>
