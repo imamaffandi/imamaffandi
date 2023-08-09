@@ -32,21 +32,6 @@ const Content = () => {
           audience. I will work with you to determine the best approach to
           design and development, including the platform, layout, and features
           that will be necessary to achieve your goals.
-          <span className="hidden sm:inline">
-            From there, I will create wireframes and prototypes to ensure that
-            the design and functionality are both user-friendly and visually
-            appealing. Once the design is finalized, I will begin coding the
-            website, using the latest coding standards and best practices to
-            ensure that the site is fast, secure, and optimized for search
-            engines. Throughout the development process, I will keep you
-            informed of my progress and will be open to feedback and revisions
-            to ensure that the final product meets your expectations. In
-            addition to my technical skills, I am also a strong communicator and
-            project manager, ensuring that your project stays on schedule and
-            within budget. Thank you for considering me for your web development
-            project. I look forward to discussing the details further and
-            answering any questions you may have.
-          </span>
         </motion.p>
       </motion.section>
       {/* Skill */}
