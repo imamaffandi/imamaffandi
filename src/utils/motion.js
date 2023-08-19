@@ -6,6 +6,7 @@ export const container = {
     transition: {
       delayChildren: 0.1,
       staggerChildren: 0.2,
+      ease: "linear",
     },
   },
 };
@@ -14,6 +15,7 @@ export const itemUp = {
   visible: {
     y: 0,
     opacity: 1,
+    transition: { ease: "linear" },
   },
 };
 export const itemLeft = {
@@ -21,6 +23,7 @@ export const itemLeft = {
   visible: {
     x: 0,
     opacity: 1,
+    transition: { ease: "linear" },
   },
 };
 export const right = {
@@ -28,6 +31,7 @@ export const right = {
   visible: {
     x: 0,
     opacity: 1,
+    transition: { ease: "linear" },
   },
 };
 export const left = {
@@ -35,11 +39,13 @@ export const left = {
   visible: {
     x: 0,
     opacity: 1,
+    transition: { ease: "linear" },
   },
 };
 export const up = {
   hidden: { y: 100, opacity: 0 },
   visible: {
+    transition: { ease: "linear" },
     y: 0,
     opacity: 1,
   },
