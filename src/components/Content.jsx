@@ -5,11 +5,7 @@ import { right, up, container, itemUp } from "../utils/motion";
 const Content = () => {
   return (
     <main className="px-10">
-      <motion.section
-        initial={{ x: -100 }}
-        whileInView={{ x: 0 }}
-        transition={{ delay: 0.1 }}
-      >
+      <motion.section variants={right} initial="hidden" whileInView="visible">
         <div>
           <p className="sm:text-[18px] text-[14px] text-light  uppercase neue tracking-wider">
             Introduction
