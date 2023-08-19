@@ -1,5 +1,3 @@
-import bg from "./bg.svg";
-import dummy from "./dummy.jpg";
 import github from "./gt.svg";
 import instagram from "./ig.svg";
 import twitter from "./tw.svg";
@@ -27,8 +25,6 @@ import location from "./location.svg";
 import linkedin from "./linkedin.svg";
 
 export {
-  bg,
-  dummy,
   github,
   instagram,
   twitter,
