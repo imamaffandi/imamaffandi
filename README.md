@@ -7,7 +7,7 @@
 
 - 👨‍💻 You can see my portfolio [here](https://imamaffandi.netlify.app/)
 
-- 📫 How to reach me **affandiwebdev@gmail.com**
+- 📫 How to reach me **imamaffandi715@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
