@@ -35,47 +35,47 @@ const projects = [
   {
     index: 1,
     name: "Portfolio",
-    description:
-      "My web portfolio that includes video background, animation, and 3d objects. You can also send me a message to work with me.",
-
     image: portfolio,
-    source_code_link: "#",
+    preview: "#",
+    source: "https://github.com/imamaffandi/imamaffandi.git",
+    description:
+      "My web portfolio that includes animation, and 3d objects. You can also send me a message to work with me.",
   },
   {
     index: 2,
     name: "Movie API",
+    image: movieapi,
+    preview: "https://imamaffandi-api-project.netlify.app/",
+    source: "https://github.com/imamaffandi/apiproject",
     description:
       "My web API project that i make with pure HTML, CSS, and javascript. I use The Movie Database API to make this project.",
-
-    image: movieapi,
-    source_code_link: "https://imamaffandi-api-project.netlify.app/",
   },
   {
     index: 3,
     name: "Phone Service",
+    image: gorify,
+    preview: "https://imamaffandi-gorifycell.netlify.app/",
+    source: "https://github.com/imamaffandi/phonecell",
     description:
       "Website that i make with 3d objects using react fiber. I also use framer motion to animate content on the website.",
-
-    image: gorify,
-    source_code_link: "https://imamaffandi-gorifycell.netlify.app/",
   },
   {
     index: 4,
     name: "Blackhole Explanation",
+    image: blackhole,
+    preview: "https://imamaffandi-blackhole-explained.netlify.app/",
+    source: "https://github.com/imamaffandi/blackhole-explained.git",
     description:
       "Website that i make with 3d objects using THREE Js. I also use AOS to animate content on the website.",
-
-    image: blackhole,
-    source_code_link: "https://imamaffandi-blackhole-explained.netlify.app/",
   },
   {
     index: 5,
     name: "Restaurant Website",
+    image: resto,
+    preview: "https://imamaffandi-restaurant.netlify.app/",
+    source: "https://github.com/imamaffandi/resto.git",
     description:
       "Website that i make with React JS, and framer motion. I also use react elastic carousel library to make this website.",
-
-    image: resto,
-    source_code_link: "https://imamaffandi-restaurant.netlify.app/",
   },
 ];
 const technologies = [

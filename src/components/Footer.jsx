@@ -77,12 +77,12 @@ const Footer = () => {
             <a href="https://github.com/imamaffandi" target="_blank">
               <img src={github} alt="" className="" />
             </a>
-            <a href="https://twitter.com/Imamaffandi99" target="_blank">
+            <a href="https://twitter.com/affandi994" target="_blank">
               <img src={twitter} alt="" className="" />
             </a>
 
             <a
-              href="https://www.linkedin.com/in/imam-affandi-106450245/"
+              href="https://www.linkedin.com/in/imam-affandi-b2ba82290/"
               target="_blank"
             >
               <img src={linkedin} alt="" className="" />
