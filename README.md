@@ -5,8 +5,6 @@
 
 - 🌱 I’m currently learning **Game development with Godot**
 
-- 👨‍💻 You can see my portfolio [here](https://imamaffandi.com)
-
 - 📫 Reach me **imamaffandi715@gmail.com**
 
 
