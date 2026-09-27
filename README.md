@@ -1,10 +1,25 @@
-<h1 align="center">Imam Affandi | Creative Developer</h1>
-<h3 align="center">Independent creative developer based in Malang, Indonesia. I have more than 4 years of experience. Focus on web motion and interactions.</h3>
+# Imam Affandi
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=imamafffandi&label=Profile%20views&color=0e75b6&style=flat" alt="imamafffandi" /> </p>
+### Frontend Developer · Web Motion · Interactive Experiences
 
-- 🌱 I’m currently learning **Game development with Godot**
+Independent creative developer based in Malang, Indonesia.  
+4+ years of experience building modern, interactive web experiences.
 
-- 📫 Reach me **imamaffandi715@gmail.com**
+---
 
+### About Me
 
+I'm a creative developer focused on building websites that feel **alive**.
+
+I enjoy combining development, design, motion, and interaction to create digital experiences that are not only functional, but memorable.
+
+- 🎨 Focused on **web motion, interactions, and creative development**
+- 💻 Building with **React, Next.js, GSAP, Three.js, and modern web technologies**
+- 🌱 Currently learning **game development with Godot**
+- 📍 Based in **Malang, Indonesia**
+- 🌐 Portfolio: **[imamaffandi.com](https://imamaffandi.com)**
+- 📫 Contact: **[imamaffandi715@gmail.com](mailto:imamaffandi715@gmail.com)**
+
+---
+
+**[Explore my work →](https://imamaffandi.com)**

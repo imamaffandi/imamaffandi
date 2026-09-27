@@ -1,109 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Righteous&display=swap");
+@import "tailwindcss";
 
-* {
-  box-sizing: border-box;
+@font-face {
+  font-family: "rspk";
+  src: url("/rspk.otf");
 }
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #16161d;
-  overflow-x: hidden;
+
+@theme {
+  --font-display: "Righteous", sans-serif;
+  --font-text: "Nunito", sans-serif;
+  --font-alter: "rspk", sans-serif;
+  --color-dark: #2c3424;
+  --color-light: #daded8;
 }
+
 ::-webkit-scrollbar {
-  width: 0px;
-}
-/* ::-webkit-scrollbar-thumb {
-  background-color: bisque;
-} */
-
-.poppins {
-  font-family: "Rubik", sans-serif;
-}
-.neue {
-  font-family: "Bebas Neue", sans-serif;
-}
-.glass {
-  background: rgba(0, 0, 0, 0.12);
-  border-radius: 3px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(11px);
-  -webkit-backdrop-filter: blur(11px);
-  border: 1px solid rgba(255, 0, 0, 0.3);
-}
-
-.noise {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  background: transparent url("/noise-transparent.png") repeat 0 0;
-  background-repeat: repeat;
-  animation: bg-animation 0.2s infinite;
-  opacity: 0.9;
-  visibility: visible;
-  z-index: 0;
-}
-
-@keyframes bg-animation {
-  0% {
-    transform: translate(0, 0);
-  }
-  10% {
-    transform: translate(-5%, -5%);
-  }
-  20% {
-    transform: translate(-10%, 5%);
-  }
-  30% {
-    transform: translate(5%, -10%);
-  }
-  40% {
-    transform: translate(-5%, 15%);
-  }
-  50% {
-    transform: translate(-10%, 5%);
-  }
-  60% {
-    transform: translate(15%, 0);
-  }
-  70% {
-    transform: translate(0, 10%);
-  }
-  80% {
-    transform: translate(-15%, 0);
-  }
-  90% {
-    transform: translate(10%, 5%);
-  }
-  100% {
-    transform: translate(5%, 0);
-  }
-}
-.lds-dual-ring {
-  display: flex;
-}
-.lds-dual-ring:after {
-  content: " ";
-  display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 6px solid #ff0000;
-  border-color: #e41b1b transparent #b30000 transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  width: 0;
 }

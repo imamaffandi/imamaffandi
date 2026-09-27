@@ -1,18 +1,19 @@
-import { Navbar, Header, Content, Projects, Footer } from "./components";
-import { SkullScene } from "../src/components/canvas";
+import React from 'react'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { Home, About, Contact } from './pages'
+import { Nav } from './components'
 
 const App = () => {
   return (
-    <div>
-      <div className="noise"></div>
-      <SkullScene />
-      <Navbar />
-      <Header />
-      <Content />
-      <Projects />
-      <Footer />
-    </div>
-  );
-};
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
 
-export default App;
+export default App

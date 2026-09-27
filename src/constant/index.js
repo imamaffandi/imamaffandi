@@ -1,135 +1,84 @@
-import {
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  tailwind,
-  nodejs,
-  git,
-  figma,
-  portfolio,
-  movieapi,
-  gorify,
-  blackhole,
-  resto,
-  threejs,
-} from "../assets";
-
 const links = [
   {
-    id: "about",
+    title: "Home",
+    link: "/",
+  },
+  {
     title: "About",
+    link: "/about",
   },
+  // {
+  //   title: "Project",
+  //   link: "/project",
+  // },
   {
-    id: "projects",
-    title: "Projects",
-  },
-
-  {
-    id: "contact",
     title: "Contact",
+    link: "/contact",
   },
 ];
-const projects = [
-  {
-    index: 1,
-    name: "Portfolio",
-    image: portfolio,
-    preview: "#",
-    source: "https://github.com/imamaffandi/imamaffandi.git",
-    description:
-      "My web portfolio that includes animation, and 3d objects. You can also send me a message to work with me.",
-  },
-  {
-    index: 2,
-    name: "Movie API",
-    image: movieapi,
-    preview: "https://imamaffandi-api-project.netlify.app/",
-    source: "https://github.com/imamaffandi/apiproject",
-    description:
-      "My web API project that i make with pure HTML, CSS, and javascript. I use The Movie Database API to make this project.",
-  },
-  {
-    index: 3,
-    name: "Phone Service",
-    image: gorify,
-    preview: "https://imamaffandi-gorifycell.netlify.app/",
-    source: "https://github.com/imamaffandi/phonecell",
-    description:
-      "Website that i make with 3d objects using react fiber. I also use framer motion to animate content on the website.",
-  },
-  {
-    index: 4,
-    name: "Blackhole Explanation",
-    image: blackhole,
-    preview: "https://imamaffandi-blackhole-explained.netlify.app/",
-    source: "https://github.com/imamaffandi/blackhole-explained.git",
-    description:
-      "Website that i make with 3d objects using THREE Js. I also use AOS to animate content on the website.",
-  },
-  {
-    index: 5,
-    name: "Restaurant Website",
-    image: resto,
-    preview: "https://imamaffandi-restaurant.netlify.app/",
-    source: "https://github.com/imamaffandi/resto.git",
-    description:
-      "Website that i make with React JS, and framer motion. I also use react elastic carousel library to make this website.",
-  },
+const skills = [
+  // "React",
+  "Next.js",
+  "TypeScript",
+  "Tailwind",
+  "GSAP",
+  "Framer Motion",
+  // "Three.js",
+  "WebGL",
+  // "Node.js",
+  // "Express",
+  // "MongoDB",
+  // "Vercel",
+  "Git",
+  "Figma",
 ];
-const technologies = [
-  {
-    index: 1,
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    index: 2,
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    index: 3,
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    index: 4,
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    index: 5,
-    name: "React JS",
-    icon: reactjs,
-  },
+const services = [
+  "Landing page & company profile (fast, SEO-ready)",
+  "Web app (React / Next.js)",
+  "Custom system (admin panel, dashboard, internal tools)",
+  "Revamp old websites (WordPress -> modern stack)",
+  "Performance & UX optimization",
+  "Deployment + basic security setup",
+];
+export function getAge(dateString) {
+  const today = new Date();
+  const birthDate = new Date(dateString);
 
-  {
-    index: 6,
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    index: 7,
-    name: "Node JS",
-    icon: nodejs,
-  },
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
 
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+
+  return age;
+}
+export function getGreeting() {
+  const now = new Date();
+  const hours = now.getHours();
+
+  if (hours >= 0 && hours < 12) {
+    return "Good Morning";
+  } else if (hours >= 12 && hours < 18) {
+    return "Good Afternoon";
+  } else if (hours >= 18 && hours < 21) {
+    return "Good Evening";
+  } else {
+    return "Good Night";
+  }
+}
+const social = [
+  { title: "Instagram", link: "https://www.instagram.com/imamaffandi__/" },
   {
-    index: 8,
-    name: "Three JS",
-    icon: threejs,
+    title: "LinkedIn",
+    link: "https://www.linkedin.com/in/imam-affandi-b2ba82290/",
   },
+  { title: "Github", link: "https://github.com/imamaffandi" },
   {
-    index: 9,
-    name: "git",
-    icon: git,
+    title: "imamaffandi715@gmail.com",
+    link: "mailto:imamaffandi715@gmail.com",
   },
-  {
-    index: 10,
-    name: "figma",
-    icon: figma,
-  },
+  { title: "+62 851-2363-7703", link: "https://wa.me/6285123637703" },
+  { title: "+62 812-3067-7319", link: "https://wa.me/6281230677319" },
 ];
-export { links, projects, technologies };
+export { links, skills, services, social };
