@@ -17,9 +17,9 @@ I enjoy combining development, design, motion, and interaction to create digital
 - 💻 Building with **React, Next.js, GSAP, Three.js, and modern web technologies**
 - 🌱 Currently learning **game development with Godot**
 - 📍 Based in **Malang, Indonesia**
-- 🌐 Portfolio: **[imamaffandi.com](https://imamaffandi.com)**
+- 🌐 Portfolio: **[imamaffandi.my.id](https://imamaffandi.my.id)**
 - 📫 Contact: **[imamaffandi715@gmail.com](mailto:imamaffandi715@gmail.com)**
 
 ---
 
-**[Explore my work →](https://imamaffandi.com)**
+**[Explore my work →](https://imamaffandi.my.id)**
