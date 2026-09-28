@@ -5,8 +5,8 @@ const Nav = ({ className, childClass }) => {
     const [hover, setHover] = useState(null);
     return (
         <main>
-            <Link to={'/'} className='font-text font-semibold absolute top-5 left-5 tracking-wider'>Imam Affandi</Link>
-            <div className={`absolute bottom-0 left-0 p-5 text-xs font-text tracking-tight flex flex-col items-start justify-start`}>
+            <Link to={'/'} className='font-display font-black fixed z-50 top-5 left-5 tracking-wider'>Imam Affandi</Link>
+            <div className={`fixed z-50 bottom-0 left-0 p-5 text-xs font-text tracking-tight flex flex-col items-start justify-start`}>
                 {
                     links.map((i, index) => {
                         return (

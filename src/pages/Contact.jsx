@@ -6,7 +6,7 @@ const Contact = () => {
     return (
         <div className='bg-light w-full h-screen flex items-center justify-center overflow-hidden'><Noise />
             <main className='rounded-xl bg-dark w-2/3 h-2/3 relative'>
-                <h1 className='text-light font-display text-8xl p-2'>Let's Get Touched</h1>
+                <h1 className='text-light font-display font-black text-8xl p-2'>Let's Get Touched</h1>
                 <p className='text-light font-text text-md pt-3 px-2'>Message me via <span><a className='font-bold underline tracking-wider italic' href='https://wa.me/6281230677319' target='_blank'>Whatsapp</a></span> </p>
                 <div className='absolute bottom-0 left-0 flex w-full justify-between items-baseline p-5'>
                     {social.map((i, index) => {
