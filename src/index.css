@@ -11,3 +11,27 @@
 ::-webkit-scrollbar {
   width: 0;
 }
+.video-text {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-text video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-text h1 {
+  position: relative;
+  margin: 0;
+
+  font-size: clamp(5rem, 15vw, 15rem);
+  font-weight: 900;
+  line-height: 0.8;
+
+  color: white;
+  mix-blend-mode: screen;
+}

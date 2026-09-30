@@ -1,33 +1,23 @@
 import React from 'react'
 import { image1, image2, image3, image4, image5, bg } from '../assets'
-import { Noise, Roll, CTA } from '../components'
+import { Noise, CTA } from '../components'
+import data from '../data/projects.json'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     return (
         <main
-            className='bg-light h-screen w-full overflow-hidden relative flex justify-start items-center'>
-            <img src={image1} alt="" className='object-cover h-[65dvh] w-2/3 pl-20' />
+            className='bg-light h-screen w-full overflow-hidden relative flex justify-center items-center'>
             <Noise />
             <CTA />
-            <Roll
-                items={['Ambient', 'House', 'Techno', 'Jazz']}
-                defaultSelected={2}
-                textColor="#a6a6a6"
-                activeColor="#000000"
-                side="right"
-                fontSize={5}
-                spacing={1.4}
-                curve={1}
-                tilt={6}
-                blur={2}
-                fade={0.25}
-                smoothing={200}
-                inset={80}
-                loop={false}
-                draggable
-                //   soundUrl="/assets/sounds/click-soft.mp3"
-                soundVolume={0.5}
-                onChange={(index, item) => console.log(index, item)} />
+            <img src={image1} alt="" className='aspect-video w-1/2 object-cover' />
+            <div className='absolute right-2 bottom-2 flex flex-col items-end justify-end font-text tracking-wide text-xs'>
+                {data.map((i, index) => {
+                    return (
+                        <Link key={index} className='cursor-pointer transition duration-200 hover:-translate-x-0.5' to={`projects/${i.path}`}>{i.title}</Link>
+                    )
+                })}
+            </div>
         </main>
     )
 }

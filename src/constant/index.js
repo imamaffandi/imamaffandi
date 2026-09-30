@@ -7,10 +7,10 @@ const links = [
     title: "About",
     link: "/about",
   },
-  // {
-  //   title: "Project",
-  //   link: "/project",
-  // },
+  {
+    title: "Project",
+    link: "/project",
+  },
   {
     title: "Contact",
     link: "/contact",
@@ -31,6 +31,24 @@ const skills = [
   // "Vercel",
   "Git",
   "Figma",
+];
+const steps = [
+  {
+    title: "Discovery",
+    desc: "We clarify goals, audience, and must-have outcomes—then map content, sitemap, and priorities so the site matches how your F&B or tourism business actually wins customers.",
+  },
+  {
+    title: "Design",
+    desc: "Wireframes and UI that spotlight menus, bookings, and trust—mobile-first layouts, clear CTAs, and brand-consistent visuals tailored to hospitality and travel.",
+  },
+  {
+    title: "Development",
+    desc: "Fast, clean builds with responsive behavior, optimized media, and the integrations you need—reservations, WhatsApp, maps, forms—tested before handoff.",
+  },
+  {
+    title: "Launch & optimize",
+    desc: "Go-live with analytics and SEO fundamentals, then refine based on real behavior—speed checks, conversion tweaks, and dependable support after launch.",
+  },
 ];
 const services = [
   "Landing page & company profile (fast, SEO-ready)",
@@ -81,4 +99,4 @@ const social = [
   { title: "+62 851-2363-7703", link: "https://wa.me/6285123637703" },
   { title: "+62 812-3067-7319", link: "https://wa.me/6281230677319" },
 ];
-export { links, skills, services, social };
+export { links, skills, steps, services, social };
