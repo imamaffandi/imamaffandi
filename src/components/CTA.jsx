@@ -29,7 +29,7 @@ const CTA = () => {
                                     <a key={index} className='cursor-pointer text-xs font-thin hover:opacity-80' href={i.link} target='_blank' rel='noopener noreferrer'>{i.title}</a>
                                 )
                             })}
-                            <Link className='text-xs font-thin hover:opacity-80' to="/term">{ }</Link>
+                            <Link className='text-xs font-thin hover:opacity-80' to="/terms">{ }</Link>
                         </div>
                     </>
                 )}

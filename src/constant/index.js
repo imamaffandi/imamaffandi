@@ -35,19 +35,19 @@ const skills = [
 const steps = [
   {
     title: "Discovery",
-    desc: "We clarify goals, audience, and must-have outcomes—then map content, sitemap, and priorities so the site matches how your F&B or tourism business actually wins customers.",
+    desc: "We clarify goals, audience, and must-have outcomes, then map content, sitemap, and priorities so the site matches how your F&B or tourism business actually wins customers.",
   },
   {
     title: "Design",
-    desc: "Wireframes and UI that spotlight menus, bookings, and trust—mobile-first layouts, clear CTAs, and brand-consistent visuals tailored to hospitality and travel.",
+    desc: "Wireframes and UI that spotlight menus, bookings, and trust: mobile-first layouts, clear CTAs, and brand-consistent visuals tailored to hospitality and travel.",
   },
   {
     title: "Development",
-    desc: "Fast, clean builds with responsive behavior, optimized media, and the integrations you need—reservations, WhatsApp, maps, forms—tested before handoff.",
+    desc: "Fast, clean builds with responsive behavior, optimized media, and the integrations you need (reservations, WhatsApp, maps, forms), tested before handoff.",
   },
   {
     title: "Launch & optimize",
-    desc: "Go-live with analytics and SEO fundamentals, then refine based on real behavior—speed checks, conversion tweaks, and dependable support after launch.",
+    desc: "Go-live with analytics and SEO fundamentals, then refine based on real behavior: speed checks, conversion tweaks, and dependable support after launch.",
   },
 ];
 const services = [

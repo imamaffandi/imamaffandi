@@ -13,7 +13,7 @@ export const data = [
     id: "blackmotion",
     image: bmotion,
     title: "Blackmotion",
-    link: "https://blackmotion2026-preview.netlify.app/",
+    link: "https://blackmotion.id",
     path: "blackmotion",
     description:
       "Service: interactive campaign landing page with advanced transitions and floating 3D cards. Client gets higher visual impact and more memorable first impression for portfolio visitors.",
@@ -37,3 +37,20 @@ export const data = [
       "Service: e-commerce landing page plus admin panel for product management. Client gets easier catalog updates and smoother browsing experience for shoppers.",
   },
 ];
+
+const toSentence = (text) =>
+  text.charAt(0).toUpperCase() + text.slice(1).replace(/\.?$/, ".");
+
+// Descriptions read "Service: <what was built>. Client gets <outcome>."
+export const getProjectSummary = ({ description }) => {
+  const [built, outcome] = description
+    .replace(/^Service:\s*/, "")
+    .split(/\.\s*Client gets\s*/);
+  return {
+    built: toSentence(built),
+    outcome: outcome ? toSentence(outcome) : null,
+  };
+};
+
+export const getHostname = ({ link }) =>
+  new URL(link).hostname.replace(/^www\./, "");
