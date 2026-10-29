@@ -4,8 +4,14 @@
 @theme {
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-text: "JetBrains Mono", ui-monospace, monospace;
-  --color-dark: #2c3424;
-  --color-light: #daded8;
+  /* Palette sampled from the plein-air sky painting (assets/e5622c9d...jpg) */
+  --color-dark: #1d3566;   /* deep cobalt, sky shadow */
+  --color-light: #f1efea;  /* cloud highlight */
+  --color-sky: #3d78cc;    /* mid sky blue */
+  --color-haze: #a8a2c0;   /* lavender cloud shadow */
+  --color-field: #7a9447;  /* sunlit grass */
+  --color-grove: #2f4222;  /* tree shade */
+  --color-ochre: #d4a843;  /* road line */
 }
 
 /* Shape rule: interactive elements are full pills, images and sections stay square */

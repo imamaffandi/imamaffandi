@@ -13,7 +13,7 @@ const Nav = () => {
         <header>
             <Link to={'/'} className='fixed z-50 top-5 left-5 font-display text-xl font-semibold tracking-wide text-light mix-blend-difference'>Imam Affandi</Link>
             {showLinks && (
-                <nav aria-label='Main' className='fixed z-50 bottom-0 left-0 p-5 text-xs font-text text-light mix-blend-difference flex flex-col items-start justify-start'>
+                <nav aria-label='Main' className='fixed z-50 bottom-0 left-0 p-5 text-xs bg-white font-text text-dark flex flex-col items-start justify-start'>
                     {links.map((i, index) => {
                         return (
                             <Link

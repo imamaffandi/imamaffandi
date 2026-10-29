@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Noise } from '../components'
 import { data } from '../data/projects'
 import { gsap, useGSAP, MOTION_OK } from '../lib/motion'
+import { skybg } from '../assets'
 
 // New projects are appended to data, so the last entry is the one shown first
 const LATEST = data[data.length - 1]
@@ -26,6 +27,7 @@ const Home = () => {
     const [active, setActive] = useState(null)
     const navigate = useNavigate()
     const shownId = active ?? LATEST.id
+    const shownProject = data.find((i) => i.id === shownId)
 
     useGSAP(() => {
         const fitFrame = () => {
@@ -78,11 +80,21 @@ const Home = () => {
         gsap.timeline({ onComplete: go })
             .to(scope.current.querySelectorAll('[data-title]'), { yPercent: -110, duration: 0.45, stagger: 0.03, ease: 'power2.in' }, 0)
             .to(frame.current, { clipPath: 'inset(0px 0px 0px 0px)', duration: 1.1, ease: 'expo.inOut' }, 0.15)
+            // The detail page has no grain, so fade it out instead of letting it pop off on unmount
+            .to(scope.current.querySelector('[data-noise]'), { autoAlpha: 0, duration: 0.6, ease: 'power2.out' }, 0.5)
     }
 
     return (
-        <main ref={scope} className='relative h-dvh w-full overflow-hidden bg-light'>
-            <div ref={frame} className='absolute inset-0 overflow-hidden bg-dark/10'>
+        <main
+            style={{ backgroundImage: `url(${skybg})`, backgroundPosition: 'bottom' }}
+            ref={scope} className='relative h-dvh w-full overflow-hidden bg-light'>
+            {/* clip-path also clips hit-testing, so only the visible window is clickable */}
+            <Link
+                ref={frame}
+                to={`/projects/${shownProject.path}`}
+                onClick={(event) => openProject(event, shownProject)}
+                aria-label={`Open ${shownProject.title}`}
+                className='absolute inset-0 block cursor-pointer overflow-hidden bg-light/10'>
                 {data.map((i) => (
                     <img
                         key={i.id}
@@ -92,12 +104,14 @@ const Home = () => {
                         className={`absolute inset-0 h-full w-full object-cover ${i.id === LATEST.id ? '' : 'invisible opacity-0'}`}
                     />
                 ))}
+            </Link>
+            <div data-noise className='pointer-events-none absolute inset-0'>
+                <Noise />
             </div>
-            <Noise />
             <ul
                 aria-label='Projects'
                 onMouseLeave={() => preview(null)}
-                className='absolute right-5 bottom-5 flex flex-col items-end font-text text-xs tracking-wide text-dark'>
+                className='absolute right-5 bottom-5 flex flex-col items-end font-text text-xs tracking-wide text-light'>
                 {data.map((i) => (
                     <li key={i.id} className='overflow-hidden'>
                         <span data-title className='block'>

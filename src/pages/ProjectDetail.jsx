@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
-import { Footer, WorkGrid } from '../components'
+import { Footer } from '../components'
 import { steps } from '../constant'
 import { data, getHostname, getProjectSummary } from '../data/projects'
 import { gsap, ScrollTrigger, useGSAP, MOTION_OK, revealOnScroll } from '../lib/motion'
@@ -77,12 +77,14 @@ const ProjectDetail = ({ project }) => {
                 <img
                     data-hero-image
                     src={project.image}
+                    decoding='sync'
+                    fetchPriority='high'
                     alt={`${project.title} website preview`}
                     className='absolute inset-0 h-full w-full object-cover'
                 />
                 <div
                     data-hero-scrim
-                    className='absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(44,52,36,0.78)_0%,rgba(44,52,36,0.45)_55%,rgba(44,52,36,0.25)_100%)]'
+                    className='absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(29,53,102,0.78)_0%,rgba(29,53,102,0.45)_55%,rgba(29,53,102,0.25)_100%)]'
                 />
                 <div className='relative flex w-full max-w-6xl flex-col items-center gap-10 px-5 text-center text-light'>
                     <h1 className='overflow-hidden pb-2 font-display text-[clamp(3.5rem,9vw,9rem)] leading-none tracking-tight'>
@@ -92,8 +94,8 @@ const ProjectDetail = ({ project }) => {
                         <a href={project.link} target='_blank' rel='noopener noreferrer' className={`${pillClass} bg-light text-dark`}>
                             Visit live site
                         </a>
-                        <Link to='/project' className={`${pillClass} border border-light/50 text-light hover:bg-light/10`}>
-                            All projects
+                        <Link to='/' className={`${pillClass} border border-light/50 text-light hover:bg-light/10`}>
+                            Back home
                         </Link>
                     </div>
                 </div>
@@ -213,41 +215,15 @@ const ProjectDetail = ({ project }) => {
     )
 }
 
-const ProjectIndex = () => {
-    const scope = useRef(null)
-
-    useGSAP(() => {
-        const mm = gsap.matchMedia()
-        mm.add(MOTION_OK, () => {
-            gsap.from('[data-index-title]', { yPercent: 110, duration: 1.1, ease: 'expo.out' })
-            revealOnScroll(scope.current)
-        })
-    }, { scope })
-
-    return (
-        <div ref={scope} className='bg-light'>
-            <main className='px-5 pt-28 pb-24 md:px-10 md:pt-24 md:pb-32'>
-                <h1 className='mb-16 overflow-hidden pb-2 font-display text-6xl leading-none tracking-tight md:mb-24 md:text-8xl'>
-                    <span data-index-title className='block'>Selected work</span>
-                </h1>
-                <WorkGrid />
-            </main>
-            <Footer />
-        </div>
-    )
-}
-
 const ProjectMissing = () => (
     <main className='flex min-h-dvh flex-col items-start justify-center gap-8 bg-light px-5 md:px-10'>
         <h1 className='font-display text-5xl leading-[1.05] md:text-7xl'>This project doesn't exist.</h1>
-        <Link to='/project' className={`${pillClass} bg-dark text-light`}>See all projects</Link>
+        <Link to='/' className={`${pillClass} bg-dark text-light`}>Back home</Link>
     </main>
 )
 
-const Projects = () => {
+const ProjectPage = () => {
     const { path } = useParams()
-    if (!path) return <ProjectIndex />
-
     const project = data.find((i) => i.path === path)
     if (!project) return <ProjectMissing />
 
@@ -255,4 +231,4 @@ const Projects = () => {
     return <ProjectDetail key={project.id} project={project} />
 }
 
-export default Projects
+export default ProjectPage

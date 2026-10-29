@@ -19,6 +19,10 @@ const Noise = ({
         let frame = 0;
         let animationId;
         const canvasSize = 1024;
+        // A handful of frames cycled forever looks identical to fresh grain,
+        // and keeps the per-frame cost to one putImageData during page animations
+        const cacheSize = 6;
+        const cache = [];
 
         const resize = () => {
             if (!canvas) return;
@@ -29,19 +33,24 @@ const Noise = ({
             canvas.style.height = '100vh';
         };
 
-        const drawGrain = () => {
+        const createGrain = () => {
             const imageData = ctx.createImageData(canvasSize, canvasSize);
-            const data = imageData.data;
+            // One 32-bit write per pixel (little-endian ABGR) instead of four byte writes
+            const pixels = new Uint32Array(imageData.data.buffer);
+            const alpha = patternAlpha << 24;
 
-            for (let i = 0; i < data.length; i += 4) {
-                const value = Math.random() * 255;
-                data[i] = value;
-                data[i + 1] = value;
-                data[i + 2] = value;
-                data[i + 3] = patternAlpha;
+            for (let i = 0; i < pixels.length; i++) {
+                const value = (Math.random() * 256) | 0;
+                pixels[i] = alpha | (value << 16) | (value << 8) | value;
             }
 
-            ctx.putImageData(imageData, 0, 0);
+            return imageData;
+        };
+
+        const drawGrain = () => {
+            const index = (frame / patternRefreshInterval) % cacheSize;
+            if (!cache[index]) cache[index] = createGrain();
+            ctx.putImageData(cache[index], 0, 0);
         };
 
         const loop = () => {

@@ -1,8 +1,8 @@
-import { bstudio, bmotion, lucky, okta } from "../assets";
+import { blackstudio, blackmotion, oktha, redistrict } from "../assets";
 export const data = [
   {
     id: "blackstudio",
-    image: bstudio,
+    image: blackstudio,
     title: "Blackstudio",
     link: "https://blackstudio.id",
     path: "blackstudio",
@@ -11,7 +11,7 @@ export const data = [
   },
   {
     id: "blackmotion",
-    image: bmotion,
+    image: blackmotion,
     title: "Blackmotion",
     link: "https://blackmotion.id",
     path: "blackmotion",
@@ -20,7 +20,7 @@ export const data = [
   },
   {
     id: "oktha-viano",
-    image: okta,
+    image: oktha,
     title: "Oktha Viano",
     link: "https://okthaviano.netlify.app",
     path: "oktha",
@@ -29,7 +29,7 @@ export const data = [
   },
   {
     id: "reignite-district",
-    image: lucky,
+    image: redistrict,
     title: "Reignite District",
     link: "https://reignitedistrict.netlify.app/",
     path: "redistrict",
