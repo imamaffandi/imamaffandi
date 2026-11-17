@@ -1,11 +1,10 @@
-import { blackstudio, blackmotion, oktha, redistrict } from "../assets";
+import { blackstudio, blackmotion, oktha, redistrict, opaline, ngwarung, scaffld } from "../assets";
 export const data = [
   {
     id: "blackstudio",
     image: blackstudio,
     title: "Blackstudio",
     link: "https://blackstudio.id",
-    path: "blackstudio",
     description:
       "Service: end-to-end landing page engineering with custom motion and section-based navigation. Client gets premium brand presentation, smoother storytelling flow, and stable long-term maintenance.",
   },
@@ -14,7 +13,6 @@ export const data = [
     image: blackmotion,
     title: "Blackmotion",
     link: "https://blackmotion.id",
-    path: "blackmotion",
     description:
       "Service: interactive campaign landing page with advanced transitions and floating 3D cards. Client gets higher visual impact and more memorable first impression for portfolio visitors.",
   },
@@ -23,7 +21,6 @@ export const data = [
     image: oktha,
     title: "Oktha Viano",
     link: "https://okthaviano.netlify.app",
-    path: "oktha",
     description:
       "Service: portfolio website for video creator with subtle motion system and polished transitions. Client gets stronger personal brand perception and clearer showcase structure for potential leads.",
   },
@@ -32,9 +29,32 @@ export const data = [
     image: redistrict,
     title: "Reignite District",
     link: "https://reignitedistrict.netlify.app/",
-    path: "redistrict",
     description:
       "Service: e-commerce landing page plus admin panel for product management. Client gets easier catalog updates and smoother browsing experience for shoppers.",
+  },
+  {
+    id: "opaline",
+    image: opaline,
+    title: "Opaline",
+    link: "https://opaline-official.netlify.app",
+    description:
+      "Service: landing page for a digital wedding invitation studio with editorial typography and layered photo composition. Client gets an elegant showcase of invitation packages that turns visitors into orders.",
+  },
+  {
+    id: "ngwarung",
+    image: ngwarung,
+    title: "NGwarung",
+    link: "https://ngwarung.vercel.app",
+    description:
+      "Service: product landing page for an offline-first POS and inventory app built for small warungs, with an interactive cashier demo. Client gets a clear pitch that explains the app in seconds and drives trial sign-ups.",
+  },
+  {
+    id: "scaffld",
+    image: scaffld,
+    title: "Scaffld",
+    link: "https://scaffld.github.io/scaffld",
+    description:
+      "Service: studio website with bold Swiss-style layout, oversized type, and scroll-driven motion. Client gets a distinctive brand presence that sets the studio apart and frames its project portfolio.",
   },
 ];
 
@@ -51,6 +71,3 @@ export const getProjectSummary = ({ description }) => {
     outcome: outcome ? toSentence(outcome) : null,
   };
 };
-
-export const getHostname = ({ link }) =>
-  new URL(link).hostname.replace(/^www\./, "");

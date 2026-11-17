@@ -78,15 +78,15 @@ const renderBlock = (block, index) => {
 
 const Terms = () => {
     return (
-        <div className='bg-light'>
-            <main className='grid grid-cols-1 gap-12 px-5 pt-28 pb-32 md:grid-cols-12 md:px-10 md:pt-24 md:pb-48'>
+        <>
+            <main className='relative z-10 grid grid-cols-1 gap-12 bg-light px-5 pt-28 pb-32 md:grid-cols-12 md:px-10 md:pt-24 md:pb-48'>
                 <h1 className='font-display text-6xl leading-none tracking-tight md:col-span-4 md:text-7xl'>Terms of Service</h1>
                 <article className='font-text text-sm leading-relaxed text-dark/80 md:col-span-7 md:col-start-6 [&>h2:first-of-type]:mt-0'>
                     {BLOCKS.map(renderBlock)}
                 </article>
             </main>
             <Footer />
-        </div>
+        </>
     )
 }
 

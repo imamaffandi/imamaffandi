@@ -1,52 +1,104 @@
-import React from 'react'
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { links, social } from '../constant'
+import { links, social, whatsapp } from '../constant'
+import { skybg } from '../assets'
+import { gsap, useGSAP, MOTION_OK } from '../lib/motion'
+import Noise from './Noise'
 
+const COLUMNS = [
+    { title: 'Pages', items: links.map((i) => ({ label: i.title, to: i.link })) },
+    { title: 'Social', items: social.slice(0, 3).map((i) => ({ label: i.title, href: i.link })) },
+    { title: 'Contact', items: social.slice(3).map((i) => ({ label: i.title, href: i.link })), wide: true },
+]
+
+const linkClass = 'text-white/85 transition-colors duration-200 hover:text-white'
+
+/*
+ * Curtain footer: it sits fixed underneath the page (z-0) and an empty, viewport-tall
+ * spacer ends the document, so scrolling to the end slides the page up off it.
+ * The page content before it must be `relative z-10` with its own background.
+ */
 const Footer = () => {
-    const half = Math.ceil(links.length / 2)
-    const profiles = social.slice(0, 3)
+    const scope = useRef(null)
+    const spacer = useRef(null)
+
+    useGSAP(() => {
+        const mm = gsap.matchMedia()
+        mm.add(MOTION_OK, () => {
+            // Play once the curtain is mostly open, not on mount while it's still covered
+            // fromTo, not from: an explicit end value can't capture a half-hidden state on StrictMode re-runs
+            gsap.fromTo('[data-reveal]', { y: 32, autoAlpha: 0 }, {
+                y: 0,
+                autoAlpha: 1,
+                duration: 1,
+                stagger: 0.08,
+                ease: 'expo.out',
+                scrollTrigger: { trigger: spacer.current, start: 'top 60%', toggleActions: 'play none none reverse' },
+            })
+        })
+    }, { scope })
+
     return (
-        <footer className='relative bg-dark text-light'>
-            {/* Closing call to action */}
-            <div className='flex flex-col items-start gap-10 px-5 pt-24 pb-20 md:px-10 md:pt-32 md:pb-28'>
-                <h2 className='font-display text-5xl leading-[1.05] tracking-tight md:text-7xl lg:text-8xl'>
-                    You bring the brief.
-                    <span className='block text-light/55'>I'll bring it to life.</span>
-                </h2>
-                <Link
-                    to='/contact'
-                    className='rounded-full bg-light px-6 py-3 font-text text-sm text-dark transition-transform duration-300 hover:-translate-y-0.5 active:scale-[0.98]'>
-                    Get in touch
-                </Link>
-            </div>
-            {/* Page links with the wordmark centered */}
-            <nav aria-label='Footer' className='grid grid-cols-2 gap-y-6 border-t border-light/15 px-5 py-8 font-text text-xs md:grid-cols-[1fr_auto_1fr] md:items-center md:px-10'>
-                <Link to='/' className='order-first col-span-2 font-display text-3xl md:order-0 md:col-start-2 md:col-span-1 md:row-start-1 md:text-4xl'>Imam Affandi</Link>
-                <div className='flex gap-6 md:col-start-1 md:row-start-1'>
-                    {links.slice(0, half).map((i) => (
-                        <Link key={i.link} to={i.link} className='transition-opacity duration-200 hover:opacity-60'>{i.title}</Link>
-                    ))}
-                </div>
-                <div className='flex justify-end gap-6 md:col-start-3 md:row-start-1'>
-                    {links.slice(half).map((i) => (
-                        <Link key={i.link} to={i.link} className='transition-opacity duration-200 hover:opacity-60'>{i.title}</Link>
-                    ))}
-                </div>
-            </nav>
-            <div className='flex flex-col gap-4 border-t border-light/15 px-5 py-6 font-text text-xs text-light/70 md:flex-row md:items-center md:justify-between md:px-10'>
-                <ul className='flex flex-wrap gap-6'>
-                    {profiles.map((i) => (
-                        <li key={i.link}>
-                            <a href={i.link} target='_blank' rel='noopener noreferrer' className='transition-colors duration-200 hover:text-light'>{i.title}</a>
-                        </li>
-                    ))}
-                </ul>
-                <div className='flex items-center gap-4'>
-                    <Link to='/terms' className='rounded-full border border-light/30 px-4 py-1.5 transition-colors duration-200 hover:bg-light hover:text-dark'>Terms of Service</Link>
-                    <p>© {new Date().getFullYear()} Imam Affandi</p>
-                </div>
-            </div>
-        </footer>
+        <>
+            <div ref={spacer} aria-hidden='true' className='h-dvh' />
+            <footer
+                ref={scope}
+                className='fixed inset-x-0 bottom-0 z-0 flex h-dvh w-full flex-col justify-between overflow-hidden bg-sky bg-cover px-5 pt-20 pb-4 text-white md:px-10 md:pt-28 md:pb-6'
+                style={{ backgroundImage: `url(${skybg})`, backgroundPosition: 'bottom' }}>
+                <Noise />
+                <section className='flex flex-col gap-4 md:gap-8'>
+                    <h1 data-reveal className='font-display text-5xl leading-[1.05] tracking-tight md:text-8xl'>
+                        Let's get in touch.
+                    </h1>
+                    <p data-reveal className='max-w-[42ch] font-text text-xs leading-relaxed text-white/90 md:text-sm'>
+                        Tell me about the site you have in mind. WhatsApp is the fastest way to reach me.
+                    </p>
+                    {/* Reveal lives on the wrapper so GSAP's opacity tween doesn't fight the link's hover transition */}
+                    <div data-reveal>
+                        <a
+                            href={whatsapp}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='inline-block font-display text-2xl text-white underline decoration-1 underline-offset-8 transition-opacity duration-200 hover:opacity-75 md:text-4xl'>
+                            Message on WhatsApp →
+                        </a>
+                    </div>
+                </section>
+
+                <section>
+                    <div className='grid grid-cols-1 gap-6 md:grid-cols-12 md:items-start md:gap-12'>
+                        <div data-reveal className='flex flex-col gap-4 md:col-span-4'>
+                            <span className='font-display text-3xl'>Imam Affandi</span>
+                            <p className='hidden max-w-[34ch] font-text text-xs leading-relaxed text-white/85 sm:block'>
+                                Frontend developer building fast, motion-rich websites for studios, creators and growing businesses.
+                            </p>
+                        </div>
+                        <nav aria-label='Contact links' className='grid grid-cols-2 gap-x-8 gap-y-5 font-text text-xs sm:grid-cols-3 md:col-span-7 md:col-start-6'>
+                            {COLUMNS.map((column) => (
+                                <div key={column.title} data-reveal className={`flex flex-col gap-2 md:gap-3 ${column.wide ? 'col-span-2 sm:col-span-1' : ''}`}>
+                                    <h2 className='font-medium text-white'>{column.title}</h2>
+                                    <ul className={`flex gap-2 ${column.wide ? 'flex-wrap gap-x-4 sm:flex-col sm:gap-x-2' : 'flex-col'}`}>
+                                        {column.items.map((item) => (
+                                            <li key={item.label}>
+                                                {item.to
+                                                    ? <Link to={item.to} className={linkClass}>{item.label}</Link>
+                                                    : <a href={item.href} target='_blank' rel='noopener noreferrer' className={linkClass}>{item.label}</a>}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </nav>
+                    </div>
+                    <div data-reveal className='mt-6 flex flex-col-reverse items-center gap-3 font-text text-[11px] text-white/80 sm:flex-row sm:justify-between md:mt-10'>
+                        <p>© {new Date().getFullYear()} Imam Affandi. All rights reserved.</p>
+                        <Link to='/terms' className='text-white/90 underline underline-offset-4 transition-colors duration-200 hover:text-white'>
+                            Terms of Service
+                        </Link>
+                    </div>
+                </section>
+            </footer>
+        </>
     )
 }
 

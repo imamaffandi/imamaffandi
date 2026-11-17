@@ -5,5 +5,8 @@ import blackstudio from "./blackstudio/hero.webp";
 import blackmotion from "./blackmotion/hero.webp";
 import oktha from "./oktha/hero.webp";
 import redistrict from "./redistrict/hero.webp";
+import opaline from "./opaline/hero.webp";
+import ngwarung from "./ngwarung/hero.webp";
+import scaffld from "./scaffld/hero.webp";
 
-export { bg, videobg, skybg, blackstudio, blackmotion, oktha, redistrict };
+export { bg, videobg, skybg, blackstudio, blackmotion, oktha, redistrict, opaline, ngwarung, scaffld };
