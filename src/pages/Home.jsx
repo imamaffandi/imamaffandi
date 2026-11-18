@@ -10,7 +10,7 @@ const pad = (n) => String(n).padStart(2, "0");
 
 /* CircularGallery parses colours on a canvas, so it needs a literal value (--color-light). */
 const LABEL_COLOR = "#f7f2e9";
-const LABEL_FONT = '400 30px "Cormorant Garamond", "Times New Roman", serif';
+const LABEL_FONT = '300 30px "SF UI Display", -apple-system, "Helvetica Neue", Arial, sans-serif';
 const ITEMS = projects.map((p) => ({ image: p.image, text: p.title }));
 
 function Carousel({ onUnsupported }) {
@@ -59,7 +59,6 @@ function Carousel({ onUnsupported }) {
                     aria-label="Projects"
                 />
             </div>
-
             <div className="absolute right-5 bottom-5 left-5 flex flex-col items-end gap-3 text-right font-text text-xs text-light md:left-auto md:w-[min(32rem,50vw)]">
                 {/* Details only appear while a project is highlighted (click a card to open it) */}
                 <div
@@ -71,7 +70,7 @@ function Carousel({ onUnsupported }) {
                         <span className="tabular-nums opacity-60">({pad(active + 1)})</span> {p.title}
                     </p>
                     <p className="leading-relaxed opacity-80">{built}</p>
-                    <a href={p.link} target="_blank" rel="noreferrer" className="rounded-full bg-dark px-4 py-2.5 text-light">
+                    <a href={p.link} target="_blank" rel="noreferrer" className="underline hover:opacity-75 px-4 py-2.5 text-light">
                         Visit Site ↗
                     </a>
                 </div>
@@ -79,13 +78,21 @@ function Carousel({ onUnsupported }) {
                     <span className="mr-2 tabular-nums opacity-60">
                         {pad(active + 1)} / {pad(projects.length)}
                     </span>
-                    <button type="button" onClick={() => gallery.current?.prev()} className="grid size-9 place-items-center rounded-full bg-light text-dark" aria-label="Previous project">
+                    <button type="button" onClick={() => gallery.current?.prev()} className="grid size-9 place-items-center text-light cursor-pointer hover:opacity-80" aria-label="Previous project">
                         ←
                     </button>
-                    <button type="button" onClick={() => gallery.current?.next()} className="grid size-9 place-items-center rounded-full bg-light text-dark" aria-label="Next project">
+                    <button type="button" onClick={() => gallery.current?.next()} className="grid size-9 place-items-center text-light cursor-pointer hover:opacity-80" aria-label="Next project">
                         →
                     </button>
                 </div>
+            </div>
+            <div className="absolute bottom-5 text-justify left-5 max-w-1/2 font-text text-xs text-light">
+                <p>
+                    these are some of the projects I've worked on. Click a card to see more details, or use the arrow keys to navigate through them.
+                </p>
+                also, if you have a project in mind, feel free <a href={whatsapp} target="_blank" rel="noreferrer" className="underline hover:opacity-75">
+                    to reach out!
+                </a>
             </div>
         </div>
     );

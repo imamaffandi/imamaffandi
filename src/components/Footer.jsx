@@ -40,7 +40,7 @@ const Footer = () => {
 
     return (
         <>
-            <div ref={spacer} aria-hidden='true' className='h-dvh' />
+            <div ref={spacer} data-nav-light aria-hidden='true' className='h-dvh' />
             <footer
                 ref={scope}
                 className='fixed inset-x-0 bottom-0 z-0 flex h-dvh w-full flex-col justify-between overflow-hidden bg-sky bg-cover px-5 pt-20 pb-4 text-white md:px-10 md:pt-28 md:pb-6'
@@ -76,7 +76,7 @@ const Footer = () => {
                         <nav aria-label='Contact links' className='grid grid-cols-2 gap-x-8 gap-y-5 font-text text-xs sm:grid-cols-3 md:col-span-7 md:col-start-6'>
                             {COLUMNS.map((column) => (
                                 <div key={column.title} data-reveal className={`flex flex-col gap-2 md:gap-3 ${column.wide ? 'col-span-2 sm:col-span-1' : ''}`}>
-                                    <h2 className='font-medium text-white'>{column.title}</h2>
+                                    <h2 className='text-white'>{column.title}</h2>
                                     <ul className={`flex gap-2 ${column.wide ? 'flex-wrap gap-x-4 sm:flex-col sm:gap-x-2' : 'flex-col'}`}>
                                         {column.items.map((item) => (
                                             <li key={item.label}>

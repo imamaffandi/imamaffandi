@@ -5,7 +5,7 @@ import terms from '../data/term.md?raw'
 const INLINE = /(\*\*[^*]+\*\*|_[^_]+_)/g
 
 const renderInline = (text) => text.split(INLINE).map((part, index) => {
-    if (/^\*\*.+\*\*$/.test(part)) return <strong key={index} className='font-semibold text-dark'>{part.slice(2, -2)}</strong>
+    if (/^\*\*.+\*\*$/.test(part)) return <strong key={index} className='text-dark'>{part.slice(2, -2)}</strong>
     if (/^_.+_$/.test(part)) return <em key={index}>{part.slice(1, -1)}</em>
     return part
 })

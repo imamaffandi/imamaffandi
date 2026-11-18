@@ -10,7 +10,7 @@ const App = () => {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/profile" element={<About />} />
           <Route path="/terms" element={<Terms />} />
         </Routes>
       </SmoothScroll>

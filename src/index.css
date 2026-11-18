@@ -1,28 +1,36 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:ital,wght@0,300..700;1,300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
 @import "tailwindcss";
 
-@theme {
-  --font-display: "Cormorant Garamond", "Times New Roman", serif;
-  --font-text: "JetBrains Mono", ui-monospace, monospace;
-  /* Palette sampled from the plein-air sky painting (assets/e5622c9d...jpg) */
-  --color-dark: #242424; /* near-black ink */
-  --color-light: #f7f2e9; /* warm cream */
-  --color-sky: #3d78cc; /* mid sky blue */
-  --color-haze: #a8a2c0; /* lavender cloud shadow */
-  --color-field: #7a9447; /* sunlit grass */
-  --color-grove: #2f4222; /* tree shade */
-  --color-ochre: #d4a843; /* road line */
+@font-face {
+  font-family: "SF UI Display";
+  src: url("/SFUIDisplay-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Shape rule: interactive elements are full pills, images and sections stay square */
+@theme {
+  --font-display:
+    "Cormorant Garamond", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Arial, sans-serif;
+  --font-text:
+    "SF UI Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial,
+    sans-serif;
+  --color-dark: #242424; /* near-black ink */
+  --color-light: #f7f2e9; /* warm cream */
+  --color-accent: #3d78cc; /* deep red highlight */
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
 
 body {
   background-color: var(--color-light);
   color: var(--color-dark);
   font-family: var(--font-text);
+  font-weight: 300;
+  /* One weight only: never fake bold or italic */
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
-}
-
-::-webkit-scrollbar {
-  width: 0;
 }
