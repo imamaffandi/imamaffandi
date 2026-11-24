@@ -1,5 +1,73 @@
-import { blackstudio, blackmotion, oktha, redistrict, opaline, ngwarung, scaffld } from "../assets";
+import {
+  blackstudio,
+  blackmotion,
+  oktha,
+  redistrict,
+  opaline,
+  ngwarung,
+  scaffld,
+  thesavanna,
+  oriri,
+  pawon,
+  polykromy,
+} from "../assets";
 export const data = [
+  {
+    id: "scaffld",
+    image: scaffld,
+    title: "Scaffld",
+    link: "https://scaffld.github.io/scaffld",
+    description:
+      "Service: studio website with bold Swiss-style layout, oversized type, and scroll-driven motion. Client gets a distinctive brand presence that sets the studio apart and frames its project portfolio.",
+  },
+  {
+    id: "opaline",
+    image: opaline,
+    title: "Opaline",
+    link: "https://opaline-official.netlify.app",
+    description:
+      "Service: landing page for a digital wedding invitation studio with editorial typography and layered photo composition. Client gets an elegant showcase of invitation packages that turns visitors into orders.",
+  },
+  {
+    id: "ngwarung",
+    image: ngwarung,
+    title: "NGwarung",
+    link: "https://ngwarung.vercel.app",
+    description:
+      "Service: product landing page for an offline-first POS and inventory app built for small warungs, with an interactive cashier demo. Client gets a clear pitch that explains the app in seconds and drives trial sign-ups.",
+  },
+  {
+    id: "thesavanna",
+    image: thesavanna,
+    title: "The Savanna",
+    link: "https://thesavanna.id",
+    description:
+      "Service: property website for a villa development, presenting villa types, investment details, and contact flow. Client gets a polished sales tool that builds buyer trust and turns interest into inquiries.",
+  },
+  {
+    id: "oriri",
+    image: oriri,
+    title: "Oriri",
+    link: "https://oririphotobooth.vercel.app",
+    description:
+      "Service: photobooth SaaS for event vendors, with a branded booth that runs from any laptop, QR-code photo strips, and a studio dashboard for every event's gallery. Client gets one platform to run booths and deliver photos without extra hardware.",
+  },
+  {
+    id: "polykromy",
+    image: polykromy,
+    title: "Polykromy",
+    link: "https://imamaffandi.github.io/polykromy/",
+    description:
+      "Service: studio website for an independent Roblox game studio, with pixel typography, halftone graphics, and a guide character. Client gets a playful brand world that showcases its games and invites collaboration.",
+  },
+  {
+    id: "pawon-kemepyar",
+    image: pawon,
+    title: "Pawon Kemepyar",
+    link: "https://pawonkemepyar.netlify.app",
+    description:
+      "Service: restaurant website for a Javanese and Nusantara kitchen, with editorial typography, a full menu, gallery, and reservations. Client gets a warm online presence that brings diners to the table.",
+  },
   {
     id: "blackstudio",
     image: blackstudio,
@@ -31,30 +99,6 @@ export const data = [
     link: "https://reignitedistrict.netlify.app/",
     description:
       "Service: e-commerce landing page plus admin panel for product management. Client gets easier catalog updates and smoother browsing experience for shoppers.",
-  },
-  {
-    id: "opaline",
-    image: opaline,
-    title: "Opaline",
-    link: "https://opaline-official.netlify.app",
-    description:
-      "Service: landing page for a digital wedding invitation studio with editorial typography and layered photo composition. Client gets an elegant showcase of invitation packages that turns visitors into orders.",
-  },
-  {
-    id: "ngwarung",
-    image: ngwarung,
-    title: "NGwarung",
-    link: "https://ngwarung.vercel.app",
-    description:
-      "Service: product landing page for an offline-first POS and inventory app built for small warungs, with an interactive cashier demo. Client gets a clear pitch that explains the app in seconds and drives trial sign-ups.",
-  },
-  {
-    id: "scaffld",
-    image: scaffld,
-    title: "Scaffld",
-    link: "https://scaffld.github.io/scaffld",
-    description:
-      "Service: studio website with bold Swiss-style layout, oversized type, and scroll-driven motion. Client gets a distinctive brand presence that sets the studio apart and frames its project portfolio.",
   },
 ];
 

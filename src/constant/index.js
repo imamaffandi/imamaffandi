@@ -46,9 +46,15 @@ export const links = [
 
 export const social = [
   { title: "Instagram", link: "https://www.instagram.com/imamaffandi__/" },
-  { title: "LinkedIn", link: "https://www.linkedin.com/in/imam-affandi-b2ba82290/" },
+  {
+    title: "LinkedIn",
+    link: "https://www.linkedin.com/in/imam-affandi-b2ba82290/",
+  },
   { title: "Github", link: "https://github.com/imamaffandi" },
-  { title: "imamaffandi715@gmail.com", link: "mailto:imamaffandi715@gmail.com" },
+  {
+    title: "imamaffandi715@gmail.com",
+    link: "mailto:imamaffandi715@gmail.com",
+  },
   { title: "+62 851-2363-7703", link: "https://wa.me/6285123637703" },
   { title: "+62 812-3067-7319", link: "https://wa.me/6281230677319" },
 ];
@@ -63,7 +69,8 @@ const yearsSince = (date) => {
   const today = new Date();
   let years = today.getFullYear() - date.getFullYear();
   const monthDiff = today.getMonth() - date.getMonth();
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < date.getDate())) years--;
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < date.getDate()))
+    years--;
   return years;
 };
 
@@ -73,23 +80,21 @@ const yearsSince = (date) => {
  */
 const statements = {
   intro: [
-    [`I'm an independent creative developer with ${yearsSince(CAREER_START)}+ years of experience, working somewhere between `],
+    [
+      `I'm an independent creative developer with ${yearsSince(CAREER_START)}+ years of experience, working somewhere between `,
+    ],
     ["technology, design, and creativity.", true],
   ],
-  boxes: [
-    ["Human beings are far too complex to fit into "],
-    ["boxes.", true],
-  ],
+  boxes: [["Human beings are far too complex to fit into "], ["boxes.", true]],
   experiment: [
-    ["I don't see life as a fixed destination with a predefined meaning. I see it as "],
+    [
+      "I don't see life as a fixed destination with a predefined meaning. I see it as ",
+    ],
     ["an experiment", true],
     [", something to explore, question, experience, and "],
     ["occasionally get wrong.", true],
   ],
-  journey: [
-    ["A journey "],
-    ["without a blueprint.", true],
-  ],
+  journey: [["A journey "], ["without a blueprint.", true]],
   memory: [
     ["Eventually, everything becomes a memory, and "],
     ["even memories fade.", true],
@@ -105,7 +110,10 @@ const profile = [
   { term: "Name", detail: "Imam Affandi" },
   { term: "Role", detail: "Creative Developer / Full Stack Developer" },
   { term: "Location", detail: "Indonesia" },
-  { term: "Focus", detail: "Interactive websites, web applications, and digital experiences" },
+  {
+    term: "Focus",
+    detail: "Interactive websites, web applications, and digital experiences",
+  },
   { term: "Stack", detail: "React, Next.js, TypeScript, GSAP, MongoDB" },
 ];
 
@@ -169,24 +177,41 @@ const journey = [
 ];
 
 const interests = [
-  { label: "Philosophy", detail: "Questions about existence, identity, meaning, and impermanence." },
-  { label: "Psychology", detail: "Human behavior, perception, and how people understand themselves and others." },
-  { label: "Technology", detail: "New tools, creative coding, and the ways technology changes what people can make." },
-  { label: "Music & films", detail: "Stories, atmosphere, and ideas that offer different perspectives." },
-  { label: "Games", detail: "Interactive worlds, systems, mechanics, and experiences." },
+  {
+    label: "Philosophy",
+    detail: "Questions about existence, identity, meaning, and impermanence.",
+  },
+  {
+    label: "Psychology",
+    detail:
+      "Human behavior, perception, and how people understand themselves and others.",
+  },
+  {
+    label: "Technology",
+    detail:
+      "New tools, creative coding, and the ways technology changes what people can make.",
+  },
+  {
+    label: "Music & films",
+    detail: "Stories, atmosphere, and ideas that offer different perspectives.",
+  },
+  {
+    label: "Games",
+    detail: "Interactive worlds, systems, mechanics, and experiences.",
+  },
 ];
 
 // Project shots picked at random to float around the hero
 const heroShots = [
+  { src: scaffld, alt: "Scaffld website" },
+  { src: opaline, alt: "Opaline website" },
   { src: blackmotion, alt: "Blackmotion website" },
   { src: oktha, alt: "Oktha website" },
-  { src: opaline, alt: "Opaline website" },
   { src: opalineInvitations, alt: "Opaline invitation designs" },
   { src: ngwarung, alt: "NGwarung website" },
   { src: ngwarungOffline, alt: "NGwarung offline cashier demo" },
   { src: restaurant, alt: "Restaurant website" },
   { src: redistrict, alt: "Reignite District website" },
-  { src: scaffld, alt: "Scaffld website" },
   { src: thesavannaHome, alt: "The Savanna website" },
 ];
 
